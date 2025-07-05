@@ -1,0 +1,17 @@
+- name: play level variables
+  hosts: local
+  connection: local
+  vars:
+    Course: Devops with AWS
+    Duration: 10HR
+    Trainer: Siva Kumar
+  tasks:
+  - name: print course information
+    vars:
+      Course: Ansible
+    ansible.builtin.debug:
+      msg: "Hello {{ Course  }}, the course duraion: {{ Duration }}, Trainer is {{ Trainer }}"
+
+  - name: print course information
+    ansible.builtin.debug:
+      msg: "Hello {{ Course  }}, the course duraion: {{ Duration }}, Trainer is {{ Trainer }}"

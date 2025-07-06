@@ -1,0 +1,13 @@
+- name: Install packages
+  hosts: backend
+  become: true
+  tasks:
+    - name: Install Multiple packages using loop
+      ansible.builtin.package:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - ngi
+        - mysql
+        - java
+        

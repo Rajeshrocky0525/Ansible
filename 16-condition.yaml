@@ -1,0 +1,17 @@
+- name: playbook coontrol using ansible ansible_facts
+  hosts: web
+  become: true
+  tasks:
+    - name: Gather facts about the system if it is redhat
+      ansible.builtin.dnf:
+        name: nginx
+        state: present
+      when: ansible_os_family == "RedHat"
+
+    - name: Gather facts about the system if it is Debaian
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+      when: ansible_os_family == "Debaian"
+
+    

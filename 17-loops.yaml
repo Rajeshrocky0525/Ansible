@@ -1,0 +1,15 @@
+- name: Loop test
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Print numbers from 1 to 5
+      ansible.builtin.debug:
+        msg: "Number: {{ item }}"
+      loop: 
+        - 1. Rajesh
+        - 2. Suresh
+        - 3. Ramesh
+        - 4. Ravi
+        - 5. Raju
+
+   
